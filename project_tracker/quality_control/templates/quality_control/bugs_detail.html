@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <!-- Ссылка для изменения проекта -->
+    <p><a href="{% url 'quality_control:update_bugreport' bugreport.id %}">Изменить bug report</a></p>
+
+    <!-- Ссылка удаления проекта -->
+    <p><a href="{% url 'quality_control:delete_bug' bugreport.id %}"onclick="return confirm('Вы уверены, что хотите удалить этот bug?');">Удалить bug</a></p>
+
+    <h1>Детали бага {{bugreport.id}}</h1><h2>{{bugreport.title}}</h2><p>{{bugreport.description}}<p/>
+    <p>Статус: {{bugreport.status}}</p>
+    <p>Приоритет: {{bugreport.priority}}</p>
+    <p>Cвязанный проект: {{bugreport.project}}</p>
+    <p>Cвязаная задачи: {{bugreport.task}}</p>
+{% endblock %}

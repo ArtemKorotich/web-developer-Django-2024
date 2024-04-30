@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <!-- Ссылка для изменения проекта -->
+    <p><a href="{% url 'quality_control:update_featurerequest' featurerequest.id %}">Изменить запрос на улучшение</a></p>
+
+    <!-- Ссылка удаления проекта -->
+    <p><a href="{% url 'quality_control:delete_feature' featurerequest.id %}"onclick="return confirm('Вы уверены, что хотите удалить этот запрос на улучшение?');">Удалить запрос на улучшение</a></p>
+
+    <h1>Детали бага {{featurerequest.id}}</h1><h2>{{featurerequest.title}}</h2><p>{{featurerequest.description}}<p/>
+    <p>Статус: {{featurerequest.status}}</p>
+    <p>Приоритет: {{featurerequest.priority}}</p>
+    <p>Cвязанный проект: {{featurerequest.project}}</p>
+    <p>Cвязаная задачи: {{featurerequest.task}}</p>
+{% endblock %}

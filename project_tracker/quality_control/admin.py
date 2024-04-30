@@ -16,3 +16,4 @@ class FeatureRequestAdmin(admin.ModelAdmin):
     list_filter = ('status',  'project')
     search_fields = ('title', 'description')
     ordering = ('created_at',)
+    

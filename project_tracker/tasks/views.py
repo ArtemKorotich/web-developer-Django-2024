@@ -10,7 +10,10 @@ from django.shortcuts import render
 
 from .models import Project, Task
 
+from django.http import HttpResponse
 
+#def index(request):
+#    return HttpResponse("Страница приложения tasks.")
 def index(request):
     return render(request, 'tasks/index.html')
 
